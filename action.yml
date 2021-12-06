@@ -1,0 +1,29 @@
+name: Create Porter preview environment
+description: Create Porter preview environment
+inputs:
+  project:
+    description: project ID of Porter project
+    required: true
+  cluster:
+    description: cluster ID of Porter cluster
+    required: true
+  token:
+    description: token for Porter authentication
+    required: true
+  namespace:
+    description: namespace for the application
+    required: false
+    default: default
+  host:
+    description: host URL of Porter instance
+    required: false
+  file:
+    description: path to porter.yaml file
+    required: false
+    default: ./porter.yaml
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  color: purple
+  icon: upload-cloud
