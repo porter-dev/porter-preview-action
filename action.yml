@@ -10,6 +10,12 @@ inputs:
   token:
     description: token for Porter authentication
     required: true
+  pr_id:
+    description: the id of the pull request
+    required: true
+  installation_id:
+    description: the installation id for the Github app which manages preview envs
+    required: true 
   namespace:
     description: namespace for the application
     required: false
