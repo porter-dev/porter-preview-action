@@ -10,7 +10,7 @@ export PORTER_TOKEN=${INPUT_TOKEN:?input \"token\" not set or empty}
 export PORTER_NAMESPACE=${INPUT_NAMESPACE:?input \"namespace\" not set or empty}
 export PORTER_PULL_REQUEST_ID=${INPUT_PR_ID:?input \"pr_id\" not set or empty}
 export PORTER_GIT_INSTALLATION_ID=${INPUT_INSTALLATION_ID:?input \"installation_id\" not set or empty}
-export PORTER_ACTION_RUN_ID=${INPUT_ACTION_ID:?input \"action_id\" not set or empty}
+export PORTER_ACTION_ID=${INPUT_ACTION_ID:?input \"action_id\" not set or empty}
 
 : "${INPUT_FILE:?input \"file\" not set or empty}"
 
