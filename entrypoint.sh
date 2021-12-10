@@ -3,7 +3,7 @@
 # manual validation of required inputs (https://github.com/actions/runner/issues/1070)
 
 export PORTER_HOST=${INPUT_HOST}
-export PORTER_BRANCH_NAME=${INPUT_HOST:?input \"branch\" not set or empty}
+export PORTER_BRANCH_NAME=${INPUT_BRANCH:?input \"branch\" not set or empty}
 export PORTER_CLUSTER=${INPUT_CLUSTER:?input \"cluster\" not set or empty}
 export PORTER_PROJECT=${INPUT_PROJECT:?input \"project\" not set or empty}
 export PORTER_TOKEN=${INPUT_TOKEN:?input \"token\" not set or empty}
