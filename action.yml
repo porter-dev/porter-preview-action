@@ -16,6 +16,12 @@ inputs:
   installation_id:
     description: the installation id for the Github app which manages preview envs
     required: true 
+  branch:
+    description: branch from which preview environment is being deployed
+    required: true
+  action_id:
+    description: id of the action job that is running. Used to display progress.
+    required: true
   namespace:
     description: namespace for the application
     required: false
