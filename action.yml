@@ -15,7 +15,16 @@ inputs:
     required: true
   installation_id:
     description: the installation id for the Github app which manages preview envs
-    required: true 
+    required: true
+  repo_name:
+    description: name of source repository
+    required: true
+  repo_owner:
+    description: username of source repository owner
+    required: true
+  pr_name:
+    description: title of the PR that triggers the workflow
+    required: true
   branch:
     description: branch from which preview environment is being deployed
     required: true
