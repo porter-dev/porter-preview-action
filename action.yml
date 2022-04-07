@@ -25,8 +25,11 @@ inputs:
   pr_name:
     description: title of the PR that triggers the workflow
     required: true
-  branch:
+  branch_from:
     description: branch from which preview environment is being deployed
+    required: true
+  branch_into:
+    description: base branch into which the pull request will be merged into
     required: true
   action_id:
     description: id of the action job that is running. Used to display progress.
