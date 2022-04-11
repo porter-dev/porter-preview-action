@@ -25,10 +25,10 @@ inputs:
   pr_name:
     description: title of the PR that triggers the workflow
     required: true
-  branch_from:
+  pr_branch_from:
     description: branch from which preview environment is being deployed
     required: true
-  branch_into:
+  pr_branch_into:
     description: base branch into which the pull request will be merged into
     required: true
   action_id:
