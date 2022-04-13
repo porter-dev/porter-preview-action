@@ -19,4 +19,7 @@ export PORTER_PR_NAME=${INPUT_PR_NAME:?input \"pr_name\" not set or empty}
 
 : "${INPUT_FILE:?input \"file\" not set or empty}"
 
+# Work around https://github.com/actions/checkout/issues/760
+git config --global --add safe.directory $PWD
+
 porter apply -f "$INPUT_FILE"
