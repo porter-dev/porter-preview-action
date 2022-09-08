@@ -8,6 +8,7 @@ export PORTER_BRANCH_INTO=${INPUT_PR_BRANCH_INTO:?input \"pr_branch_into\" not s
 export PORTER_CLUSTER=${INPUT_CLUSTER:?input \"cluster\" not set or empty}
 export PORTER_PROJECT=${INPUT_PROJECT:?input \"project\" not set or empty}
 export PORTER_TOKEN=${INPUT_TOKEN:?input \"token\" not set or empty}
+export PORTER_PREVIEW_TOKEN=${INPUT_PREVIEW_TOKEN}
 export PORTER_NAMESPACE=${INPUT_NAMESPACE:?input \"namespace\" not set or empty}
 export PORTER_PULL_REQUEST_ID=${INPUT_PR_ID:?input \"pr_id\" not set or empty}
 export PORTER_GIT_INSTALLATION_ID=${INPUT_INSTALLATION_ID:?input \"installation_id\" not set or empty}
