@@ -10,6 +10,9 @@ inputs:
   token:
     description: token for Porter authentication
     required: true
+  preview_token:
+    description: token for Porter authentication
+    required: true
   pr_id:
     description: the id of the pull request
     required: true
