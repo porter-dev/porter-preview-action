@@ -45,4 +45,4 @@ fi
 
 output="${output}]}"
 
-echo "domains=${output} >> "$GITHUB_OUTPUT"
+echo "domains=${output}" >> "$GITHUB_OUTPUT"
