@@ -1,5 +1,6 @@
 name: Create Porter preview environment
 description: Create Porter preview environment
+author: Porter Technologies, Inc.
 inputs:
   project:
     description: project ID of Porter project
@@ -45,6 +46,9 @@ inputs:
     description: path to porter.yaml file
     required: false
     default: ./porter.yaml
+outputs:
+  domains:
+    description: "Domains that web resources were deployed to"
 runs:
   using: docker
   image: Dockerfile

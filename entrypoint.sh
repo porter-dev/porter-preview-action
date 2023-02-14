@@ -21,4 +21,28 @@ export PORTER_PR_NAME=${INPUT_PR_NAME:?input \"pr_name\" not set or empty}
 # Work around https://github.com/actions/checkout/issues/760
 git config --global --add safe.directory $PWD
 
-porter apply -f "$INPUT_FILE"
+subdomains_log="/tmp/subdomains.log"
+subdomains=()
+
+porter apply -f "$INPUT_FILE" | tee /dev/tty | egrep "Your web application is ready at: " >> "$subdomains_log"
+
+while read -r line; do
+    if [[ "${line}" =~ ^"Your web application is ready at: ".* ]]; then
+        subdomains+=("${line#Your web application is ready at\: }")
+    fi
+done < "${subdomains_log}"
+
+output="{\"subdomains\": ["
+
+if (( ${#subdomains[@]} != 0 )); then
+    for (( i=0; i<${#subdomains[@]}-1; i++ ));
+    do
+        output="${output}\"${subdomains[$i]}\", "
+    done
+
+    output="${output}\"${subdomains[${#subdomains[@]}-1]}\""
+fi
+
+output="${output}]}"
+
+echo "domains=${output} >> "$GITHUB_OUTPUT"
