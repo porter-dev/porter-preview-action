@@ -9,7 +9,7 @@ steps:
   - name: Checkout code
     uses: actions/checkout@v2.3.4
   - name: Create Porter preview environment
-    uses: porter-dev/porter-preview-action@v0.1.0
+    uses: porter-dev/porter-preview-action@v0.2.2
     with:
       cluster: 1234
       project: 4321
